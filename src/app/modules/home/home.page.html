@@ -13,8 +13,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
+  <div id="container" *ngIf="getMessage() | async; let msg">
+    <strong>{{msg.text}}</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button size="small"
+    (click)="setMessage()">OR?</ion-button>
   </div>
 </ion-content>
